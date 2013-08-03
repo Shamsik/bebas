@@ -1,0 +1,39 @@
+- title t '_guestbook'
+.row
+  .large-12.columns
+    %h4= t '_guestbook'
+    %hr
+.row
+  .large-8.columns
+    .panel.secondary.hide-on-phones
+      - if @posts.length != 0
+        - for post in @posts
+          %span.left
+          .img
+            = image_tag post.gravatar_url(:rating => 'R', :secure => true, :size => 50, :default => 'mm')
+          %span.right
+            %span.radius.label
+              = time_ago_in_words(post.time)
+          - if post.author != 'Guest'
+            %a{:href => "/profile/#{post.author}"}
+              %strong= post.author
+          - else
+            %strong Guest
+          %br
+          = post.message
+          %br
+          %br
+          %hr
+        = foundation_paginate @posts
+      - else
+        Тут ещё ничего нет..
+    %ul.breadcrumbs
+      %li= link_to t('_index')
+      %li= link_to t('_guestbook'), :action => :index
+  .large-4.columns
+    .panel.secondary.hide-on-phones
+      %h6= t '_guestbook_say'
+      %hr
+      = form_tag :action => 'say' do
+        = text_area_tag(:message)
+        = submit_tag t('helpers.submit.send'), :class => 'button'

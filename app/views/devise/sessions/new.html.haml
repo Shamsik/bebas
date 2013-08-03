@@ -1,0 +1,28 @@
+- title t '_devise_sign_in'
+.row
+  .large-12.columns
+    %h4= t '_devise_sign_in'
+    %hr
+.row
+  .large-8.columns
+    .panel.secondary.hide-on-phones
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        = f.label :login
+        %br
+        = f.text_field :login, :autofocus => true
+        = f.label :password
+        %br
+        = f.password_field :password
+        - if devise_mapping.rememberable?
+          = f.check_box :remember_me, :checked => true
+          = f.label :remember_me
+        = f.submit t('helpers.submit.sign_in'), :class => 'button'
+    %ul.breadcrumbs
+      %li
+        = link_to t('_devise_sign_up'), new_user_registration_path, :method => :get
+      %li
+        = link_to t('_devise_password_new'), new_user_password_path, :method => :get
+  .large-4.columns
+    = image_tag ('warning.png')
+    %h4 Обратите внимание!
+    %p Никому не сообщайте пароль от своей учетной записи! Злоумышленники могут воспользоваться им в коррыстных целях.

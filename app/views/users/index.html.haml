@@ -1,0 +1,27 @@
+- title t '_users'
+.row
+  .large-12.columns
+    %h4= t '_users'
+    %hr
+.row
+  .large-8.columns
+    .panel.secondary.hide-on-phones
+      - if @users.length != 0
+        - for user in @users
+          .img
+            = image_tag user.gravatar_url(:rating => 'R', :secure => true, :size => 50, :default => 'mm')
+          %strong= link_to user.login, :action => :show, :user => user.login
+          %br
+          = user.email
+          %br
+          %br
+          %hr
+        = foundation_paginate @users
+      - else
+        = t 'messages.blank'
+    %ul.breadcrumbs
+      %li= link_to t('_index'), :action => :startpage, :controller => :index
+      %li= link_to t('_users'), :action => :index, :controller => :users
+  .large-4.columns
+    .panel.secondary.hide-on-phones
+      

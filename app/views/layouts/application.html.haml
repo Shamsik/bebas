@@ -1,0 +1,51 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title= content_for?(:title) ? content_for(:title) : "..."
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = favicon_link_tag 'favicon.ico'
+    = csrf_meta_tags
+    
+  %body
+    %nav.top-bar
+      %ul.title-area
+        %li.name
+          %a{:href => "/"}
+            = image_tag ('logo.png')
+        %li.toggle-topbar.menu-icon
+          %a{:href => "#"}
+            %span Меню
+      %section.top-bar-section
+        %ul.left
+          %li.divider
+          %li
+            %a{:href => "/guestbook"} 
+              = t '_guestbook'
+          %li.divider
+          %li
+            %a{:href => "/users"}
+              = t '_users'
+          %li.divider
+        %ul.right
+          - if user_signed_in?
+            %li.divider.hide-for-small
+            %li.has-dropdown
+              %a{:href => "#"}= current_user.login
+              %ul.dropdown
+                %li
+                  %label Личное меню:
+                %li
+                  
+            %li.divider
+            %li= link_to "Выйти из профиля", destroy_user_session_path, :method => :delete
+          - else
+            %li.divider
+            %li= link_to "Войти", new_user_session_path, :method => :get
+            %li.divider
+            %li= link_to "Зарегистрироваться", new_user_registration_path, :method => :get
+            %li.divider
+    = yield
+    = javascript_include_tag "application"

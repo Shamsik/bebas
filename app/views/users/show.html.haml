@@ -1,0 +1,35 @@
+- title t '_profile'
+.row
+  .large-12.columns
+    %h4
+      = t '_profile'
+      = @profile_login
+    %hr
+.row
+  .large-8.columns
+    .panel.secondary.hide-on-phones
+      - for user in @user
+        %span.right
+          .img
+            = image_tag user.gravatar_url(:rating => 'R', :secure => true, :size => 80, :default => 'mm')
+        = t 'activerecord.attributes.user.login'
+        = user.login
+        %br
+        = t 'activerecord.attributes.user.email'
+        = user.email
+        %br
+        = t 'activerecord.attributes.user.sign_in_count'
+        = user.sign_in_count
+        %br
+        = t 'activerecord.attributes.user.last_sign_in_at'
+        = user.last_sign_in_at.localize_stamp("1 Jan 1999, 18:12")
+        %br
+        = t 'activerecord.attributes.user.created_at'
+        = user.created_at.localize_stamp("1 Jan 1999, 18:12")
+        %br
+    %ul.breadcrumbs
+      %li= link_to t('_index'), :action => :startpage, :controller => :index
+      %li= link_to t('_users'), :action => :index
+      %li= link_to params[:user], :action => :show
+  .large-4.columns
+    .panel.secondary.hide-on-phones
