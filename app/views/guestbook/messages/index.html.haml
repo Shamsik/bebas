@@ -28,8 +28,8 @@
       - else
         Тут ещё ничего нет..
     %ul.breadcrumbs
-      %li= link_to t('_index')
-      %li= link_to t('_guestbook'), :action => :index
+      %li= link_to t('_index'), root_path
+      %li= link_to t('_guestbook'), guestbook_path
   .large-4.columns
     .panel.secondary.hide-on-phones
       %h6= t '_guestbook_say'

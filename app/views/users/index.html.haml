@@ -20,8 +20,8 @@
       - else
         = t 'messages.blank'
     %ul.breadcrumbs
-      %li= link_to t('_index'), :action => :startpage, :controller => :index
-      %li= link_to t('_users'), :action => :index, :controller => :users
+      %li= link_to t('_index'), root_path
+      %li= link_to t('_users'), users_path
   .large-4.columns
     .panel.secondary.hide-on-phones
       
