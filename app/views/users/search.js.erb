@@ -1,0 +1,5 @@
+var data = <%= {
+  :tpl => render(:file => 'users/search.html.haml')
+}.to_json.html_safe %>;
+
+$('#search_div').html(data.tpl);
