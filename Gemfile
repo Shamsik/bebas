@@ -9,6 +9,8 @@ gem "pg", "~> 0.15.1"
 gem 'devise', '3.0.0.rc'
 gem 'cancan'
 
+gem "ransack", github: "ernie/ransack", branch: "rails-4"
+
 gem 'haml'
 
 gem 'stamp', '0.4.0'
@@ -24,6 +26,7 @@ gem 'gravtastic'
 gem 'zurb-foundation', '~> 4.0.0'
 
 gem 'protected_attributes'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

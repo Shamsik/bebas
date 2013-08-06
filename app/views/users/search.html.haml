@@ -1,27 +1,15 @@
-- title t '_users_search'
-.row
-  .large-12.columns
-    %h4= t '_users_search'
-    %hr
-.row
-  .large-8.columns
-    .panel.secondary.hide-on-phones
-      - if @users
-        - for user in @users
-          .img
-            = image_tag user.gravatar_url(:rating => 'R', :secure => true, :size => 50, :default => 'mm')
-          %strong= link_to user.login, :action => :show, :user => user.login
-          %br
-          = user.email
-          %br
-          %br
-          %hr
-        
-      - else
-        Тут ещё ничего нет..
-    %ul.breadcrumbs
-      %li= link_to t('_index'), root_path
-      %li= link_to t('_users'), users_path
-  .large-4.columns
-    .panel.secondary.hide-on-phones
-      = params[:search][:question]
+#result{"data-alert" => ""}
+  = t '_users_search'
+  %a.close{:div => "", :href => "#"} ×
+  %hr
+  - if @result.length != 0
+    - for user in @result
+      .img
+        = image_tag user.gravatar_url(:rating => 'R', :secure => true, :size => 20, :default => 'mm')
+      %strong= link_to user.login, :action => :show, :user => user.login
+      %br
+      %br
+  - else
+    = t 'helpers.error.search'
+
+  

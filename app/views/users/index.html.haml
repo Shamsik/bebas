@@ -18,10 +18,11 @@
           %hr
         = foundation_paginate @users
       - else
-        = t 'messages.blank'
+        = t 'helpers.error.other'
     %ul.breadcrumbs
       %li= link_to t('_index'), root_path
       %li= link_to t('_users'), users_path
   .large-4.columns
     .panel.secondary.hide-on-phones
-      
+      = render 'search'
+      #search_div

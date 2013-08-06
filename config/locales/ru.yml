@@ -1,6 +1,7 @@
 ru:
   _index: Главная
   _users: Пользователи
+  _users_search: Результаты поиска
   _profile: Профиль пользователя
   _guestbook: Гостевая книга
   _guestbook_say: Новое сообщение
@@ -177,8 +178,14 @@ ru:
       prompt: ! 'Выберите: '
     submit:
       send: Отправить
+      search: Найти
       sign_up: Зарегистрироваться
       sign_in: Войти
+    error:
+      search: Ничего не найдено..
+      other: Тут ещё ничего нет..
+    placeholder:
+      users_search: Введите часть логина
   number:
     currency:
       format:

@@ -3,6 +3,7 @@ Bebas::Application.routes.draw do
   root :to => 'index#startpage'
   get  '/users' => 'users#index'
   get '/profile/:user' => 'users#show'
+  post '/users/search' => 'users#search'
   get '/news' => 'news/articles#index'
   get '/guestbook' => 'guestbook/messages#index' 
   post '/guestbook/say' => 'guestbook/messages#say'
