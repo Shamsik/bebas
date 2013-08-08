@@ -7,9 +7,7 @@
   .large-8.columns
     = validation_errors!(@post)
     .panel.secondary.hide-on-phones
-      = form_tag :action => 'say' do
-        = text_area_tag(:message)
-        = submit_tag t('helpers.submit.send'), :class => 'button'
+      = render 'say'
     %ul.breadcrumbs
       %li= link_to t('_index'), root_path
       %li= link_to t('_guestbook'), :action => :index

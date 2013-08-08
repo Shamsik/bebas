@@ -34,6 +34,4 @@
     .panel.secondary.hide-on-phones
       %h6= t '_guestbook_say'
       %hr
-      = form_tag :action => 'say' do
-        = text_area_tag(:message)
-        = submit_tag t('helpers.submit.send'), :class => 'button'
+      = render 'say'
