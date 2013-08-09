@@ -1,0 +1,5 @@
+%li.divider
+%li= link_to current_user.login
+
+%li.divider
+%li= link_to t("_devise_sign_out"), destroy_user_session_path, :method => :delete

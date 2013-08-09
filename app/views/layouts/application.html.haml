@@ -13,39 +13,16 @@
     %nav.top-bar
       %ul.title-area
         %li.name
-          %a{:href => "/"}
-            = image_tag ('logo.png')
+          = image_tag ('logo.png')
         %li.toggle-topbar.menu-icon
           %a{:href => "#"}
-            %span Меню
       %section.top-bar-section
         %ul.left
-          %li.divider
-          %li
-            %a{:href => "/guestbook"} 
-              = t '_guestbook'
-          %li.divider
-          %li
-            %a{:href => "/users"}
-              = t '_users'
-          %li.divider
+          = render 'shared/links'
         %ul.right
           - if user_signed_in?
-            %li.divider.hide-for-small
-            %li.has-dropdown
-              %a{:href => "#"}= current_user.login
-              %ul.dropdown
-                %li
-                  %label Личное меню:
-                %li
-                  
-            %li.divider
-            %li= link_to "Выйти из профиля", destroy_user_session_path, :method => :delete
+            = render 'shared/users'
           - else
-            %li.divider
-            %li= link_to "Войти", new_user_session_path, :method => :get
-            %li.divider
-            %li= link_to "Зарегистрироваться", new_user_registration_path, :method => :get
-            %li.divider
+            = render 'shared/guests'
     = yield
     = javascript_include_tag "application"

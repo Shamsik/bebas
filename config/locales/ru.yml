@@ -7,6 +7,7 @@ ru:
   _guestbook_say: Новое сообщение
   _devise_sign_up: Регистрация
   _devise_sign_in: Авторизация
+  _devise_sign_out: Выход
   _devise_password_new: Восстановление пароля
  
   date:
