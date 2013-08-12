@@ -1,3 +1,3 @@
 = search_form_for @q, :url => users_search_path, remote: true, :method => :post do |f|
   = f.text_field :login_cont, :placeholder => t('helpers.placeholder.users_search')
-  = f.submit t('helpers.submit.search'), :class => 'button'
+  = f.submit t('helpers.submit.search'), :class => 'button', data: { disable_with: t('helpers.submit.processing') }

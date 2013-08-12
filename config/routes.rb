@@ -4,8 +4,7 @@ Bebas::Application.routes.draw do
   get  '/users' => 'users#index'
   get '/profile/:user' => 'users#show'
   post '/users/search' => 'users#search'
-  get '/news' => 'news/articles#index'
   get '/guestbook' => 'guestbook/messages#index' 
-  post '/guestbook/say' => 'guestbook/messages#say'
-  get 'guestbook/say' => 'guestbook/messages#say'
+  post '/guestbook' => 'guestbook/messages#create'
+
 end

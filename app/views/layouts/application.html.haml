@@ -5,8 +5,6 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     %title= content_for?(:title) ? content_for(:title) : "..."
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
     
   %body
@@ -27,5 +25,6 @@
             - else
               = render 'shared/guests'
     %br
-    = yield
-    = javascript_include_tag "application"
+    #main_div
+      = yield
+    = javascript_include_tag "application", "data-turbolinks-track" => true

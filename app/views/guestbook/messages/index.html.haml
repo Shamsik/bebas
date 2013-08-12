@@ -5,6 +5,7 @@
     %hr
 .row
   .large-8.columns
+    #say_div
     .panel.secondary.hide-on-phones
       - if @posts.length != 0
         - for post in @posts
@@ -32,6 +33,7 @@
       %li= link_to t('_guestbook'), guestbook_path
   .large-4.columns
     .panel.secondary.hide-on-phones
-      %h6= t '_guestbook_say'
+      %h6= t '_guestbook_create'
       %hr
-      = render 'say'
+      = render 'form'
+      

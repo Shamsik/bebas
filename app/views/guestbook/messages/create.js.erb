@@ -1,0 +1,6 @@
+var data = <%= {
+  :tpl => render(:file => 'guestbook/messages/create.html.haml')
+}.to_json.html_safe %>;
+
+$('#say_div').html(data.tpl);
+

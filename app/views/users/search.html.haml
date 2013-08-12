@@ -2,14 +2,14 @@
   = t '_users_search'
   %a.close{:div => "", :href => "#"} ×
   %hr
-  - if @result.length != 0
-    - for user in @result
+  - unless @result.empty?
+    - @result.each do |user|
       .img
-        = image_tag user.gravatar_url(:rating => 'R', :secure => true, :size => 20, :default => 'mm')
+        = image_tag user.gravatar_url(:rating => 'R', :secure => true, :size => 30, :default => 'mm')
       %strong= link_to user.login, :action => :show, :user => user.login
+      %br
+      %small= user.email 
       %br
       %br
   - else
     = t 'helpers.error.search'
-
-  

@@ -5,12 +5,15 @@ ru:
   _users_search: Результаты поиска
   _profile: Профиль пользователя
   _guestbook: Гостевая книга
-  _guestbook_say: Новое сообщение
+  _guestbook_create: Новое сообщение
   _devise_sign_up: Регистрация
   _devise_sign_in: Авторизация
   _devise_sign_out: Выход
   _devise_password_new: Восстановление пароля
- 
+
+  will_paginate:
+    page_gap: ... 
+
   date:
     abbr_day_names:
     - Вс
@@ -180,6 +183,7 @@ ru:
       prompt: ! 'Выберите: '
     submit:
       send: Отправить
+      processing: Подождите..
       search: Найти
       sign_up: Зарегистрироваться
       sign_in: Войти
