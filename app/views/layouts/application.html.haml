@@ -8,23 +8,21 @@
     = csrf_meta_tags
     
   %body
-    .fixed
-      %nav.top-bar
-        %ul.title-area
-          %li.name
-            = image_tag ('logo.png')
-          %li.toggle-topbar.menu-icon
-            %a{:href => "#"}
-              %span= t '_menu'
-        %section.top-bar-section
-          %ul.left
-            = render 'shared/links'
-          %ul.right
-            - if user_signed_in?
-              = render 'shared/users'
-            - else
-              = render 'shared/guests'
-    %br
+    %nav.top-bar
+      %ul.title-area
+        %li.name
+          = image_tag ('logo.png')
+        %li.toggle-topbar.menu-icon
+          %a{:href => "#"}
+            %span= t '_menu'
+      %section.top-bar-section
+        %ul.left
+          = render 'shared/links'
+        %ul.right
+          - if user_signed_in?
+            = render 'shared/users'
+          - else
+            = render 'shared/guests'
     #main_div
       = yield
     = javascript_include_tag "application", "data-turbolinks-track" => true
