@@ -37,6 +37,18 @@ module Guestbook
 
       end
 
+      def destroy
+        authorize! :update, Guestbook
+        respond_to do |format|
+          unless params[:post].empty?
+            @post = Guestbook.find(params[:post]).destroy
+            format.html { redirect_to guestbook_path }
+          else
+            format.js { render nothing: true }
+          end
+        end
+      end      
+
     end
 end
 

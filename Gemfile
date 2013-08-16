@@ -8,6 +8,7 @@ gem "pg", "~> 0.15.1"
 
 gem 'devise', '3.0.0.rc'
 gem 'cancan'
+gem 'rolify'
 
 gem "ransack", github: "ernie/ransack", branch: "rails-4"
 

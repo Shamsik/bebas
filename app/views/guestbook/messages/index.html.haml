@@ -15,6 +15,9 @@
           %span.right
             %span.radius.label
               = time_ago_in_words(post.time)
+            %br
+            - if can? :update, Guestbook
+              = link_to '×', { :action => :destroy, :post => post }, :method => :post, remote: true
           - if post.author != 'Guest'
             %a{:href => "/profile/#{post.author}"}
               %strong= post.author
@@ -36,4 +39,3 @@
       %h6= t '_guestbook_create'
       %hr
       = render 'form'
-      
