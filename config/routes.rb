@@ -6,5 +6,5 @@ Bebas::Application.routes.draw do
   post '/users/search' => 'users#search'
   get '/guestbook' => 'guestbook/messages#index' 
   post '/guestbook' => 'guestbook/messages#create'
-
+  post '/guestbook/:post' => 'guestbook/messages#destroy'
 end
