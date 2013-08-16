@@ -24,7 +24,7 @@ bundle install
 ```
  
 ```
-rake db:migrate
+rake db:setup
 ```
 
 ```
