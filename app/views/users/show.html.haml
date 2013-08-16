@@ -27,6 +27,8 @@
         = t 'activerecord.attributes.user.created_at'
         = user.created_at.localize_stamp("1 Jan 1999, 18:12")
         %br
+        = t 'activerecord.attributes.user.roles'
+        = user.roles.first.name
     %ul.breadcrumbs
       %li= link_to t('_index'), root_path
       %li= link_to t('_users'), users_path

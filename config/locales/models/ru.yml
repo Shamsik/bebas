@@ -12,3 +12,5 @@ ru:
         last_sign_in_at: Последнее посещение
         created_at: Дата регистрации
         remember_me: Запомнить меня
+        roles: Группа
+
